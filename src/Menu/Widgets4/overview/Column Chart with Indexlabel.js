@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { RadialBarChart, RadialBar, Legend, ResponsiveContainer } from 'recharts';
+import { RadialBarChart, RadialBar, ResponsiveContainer } from 'recharts';
 
 const data = [
   {
@@ -24,12 +24,6 @@ const data = [
     name: 'unknow', uv: 6.67, pv: 4800, fill: '#ffc658',
   },
 ];
-
-const style = {
-  top: 0,
-  left: 350,
-  lineHeight: '24px',
-};
 
 
 export default class Example extends PureComponent {

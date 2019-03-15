@@ -4,8 +4,6 @@ import { Link} from 'react-router-dom';
 import {Nav} from 'reactstrap';
 import Routes from './route';
 import { Container, Row, Col } from 'reactstrap';
-import { Card, Button, CardHeader, CardFooter, CardBody,
-  CardTitle, CardText } from 'reactstrap';
 
 class App extends Component {
   render() {
