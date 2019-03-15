@@ -1,0 +1,35 @@
+
+@import url('https://fonts.googleapis.com/css?family=Allerta+Stencil');
+@import url('https://fonts.googleapis.com/css?family=Asap');
+
+
+.barre{
+  position: fixed; 
+  top: 0; 
+  left: 0;
+  bottom: 0; 
+  background-color: rgb(41, 41, 41);
+  font-size: 20px;  
+  padding: 50px;  
+  font-family: 'Asap', sans-serif;
+  
+}
+
+ol{
+  text-decoration: none; 
+}
+
+.barre p{
+
+  color: white;
+  font-family: 'Allerta Stencil', sans-serif;
+  font-size: 25px; 
+  
+}
+
+.tout{
+  background-color: #282c34;
+  
+
+}
+

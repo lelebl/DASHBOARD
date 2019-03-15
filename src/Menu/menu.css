@@ -1,0 +1,11 @@
+@import url('https://fonts.googleapis.com/css?family=Merriweather+Sans');
+  
+  .App{
+    
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 5px; 
+    color: white;
+    text-align: center;
+    background-color: #282c34;
+  }
+  

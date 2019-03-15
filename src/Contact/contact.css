@@ -1,0 +1,30 @@
+
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300');
+
+.form{
+    font-size: 15px; 
+    color: white; 
+    font-family: 'Work Sans', sans-serif;
+    padding: 50px; 
+    
+background-color: #282c34;
+border-radius: 5px; 
+margin: 10px; 
+    
+}
+
+.form h1{
+
+    font-size: 50px; 
+}
+
+.form button{
+    font-size: 30px; 
+    padding: 10px; 
+    border-radius: 5px; 
+}
+
+.form h2{
+    font-weight: bold; 
+}
+
