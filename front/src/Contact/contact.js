@@ -9,32 +9,31 @@ export default class Contact extends React.Component {
 
   //axios pour artiste
   state = {
-    nom_artiste: '',
-    prenom_artiste: '',
-    select_artiste: ''
+    nom: '',
+    birth: '',
+    followers: 0
   }
 
   handleChange = event => {
-    this.setState({ nom_artiste: event.target.value });
+    this.setState({ nom: event.target.value });
   }
-  handleChange = event => {
-    this.setState({ prenom_artiste: event.target.value });
+  handleChange1 = event => {
+    this.setState({ birth: event.target.value });
   }
-  handleChange = event => {
-    this.setState({ select_artiste: event.target.value });
+  handleChange2 = event => {
+    this.setState({ followers: event.target.value });
   }
 
   handleSubmit = event => {
     event.preventDefault();
     
-
-    const artists = {
-      nom_artiste: this.state.nom_artiste,
-      prenom_artiste: this.state.prenom_artiste,
-      select_artiste: this.state.select_artiste
+    var artists = {
+      nom: this.state.nom,
+      birth: this.state.birth,
+      followers: this.state.followers
     };
 
-    axios.put('http://localhost:3001/artists', { artists })
+    axios.put('http://localhost:3001/artists', artists )
       .then(res => {
         console.log(res);
         console.log(res.data);
@@ -62,23 +61,20 @@ export default class Contact extends React.Component {
         <br /> 
       <FormGroup>
           <Label>Nom</Label>
-          <Input type="texte" placeholder="Nom" name="nom_artiste" onChange={this.handleChange}/>
+          <Input type="texte" placeholder="Nom" name="nom" onChange={this.handleChange}/>
         </FormGroup>      <br />
         <FormGroup>
           <Label>Date de naissance</Label>
-          <Input type="texte" placeholder="Date de naissance" name="prenom_artiste" onChange={this.handleChange}/>
+          <Input type="texte" placeholder="Date de naissance" name="birth" onChange={this.handleChange1}/>
         </FormGroup>      <br />
         <FormGroup>
           <Label for="exampleSelect">Followers</Label>
-          <Input type="texte" placeholder="Followers" name="followers_artiste" onChange={this.handleChange}/><br />    <br />   
+          <Input type="texte" placeholder="Followers" name="followers" onChange={this.handleChange2}/><br />    <br />   
         <center><Button>AJOUTER </Button></center>  
 
 
         </FormGroup> </Form>
         </Col>     <br />      <br />
-
-
-
 
 
         <Col><Form>  <br />    <br /> <br /> 
