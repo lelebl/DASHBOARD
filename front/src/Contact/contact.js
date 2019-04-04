@@ -62,27 +62,16 @@ export default class Contact extends React.Component {
         <br /> 
       <FormGroup>
           <Label>Nom</Label>
-          <Input type="texte"  name="nom_artiste" onChange={this.handleChange}/>
+          <Input type="texte" placeholder="Nom" name="nom_artiste" onChange={this.handleChange}/>
         </FormGroup>      <br />
         <FormGroup>
-          <Label>Prénom</Label>
-          <Input type="texte"  name="prenom_artiste" onChange={this.handleChange}/>
+          <Label>Date de naissance</Label>
+          <Input type="texte" placeholder="Date de naissance" name="prenom_artiste" onChange={this.handleChange}/>
         </FormGroup>      <br />
         <FormGroup>
           <Label for="exampleSelect">Followers</Label>
-          <Input type="select" name="select_artiste"onChange={this.handleChange}>
-            <option>10</option>
-            <option>20</option>
-            <option>30</option>
-            <option>40</option>
-            <option>50</option>
-            <option>100</option>
-            <option>500</option>
-            <option>1000</option>
-            <option>5000</option>
-            <option>100k</option>
-          </Input>
-          <button type="submit">Add Artiste</button>
+          <Input type="texte" placeholder="Followers" name="followers_artiste" onChange={this.handleChange}/><br />    <br />   
+        <center><Button>AJOUTER </Button></center>  
 
 
         </FormGroup> </Form>
@@ -113,7 +102,8 @@ export default class Contact extends React.Component {
           <FormText color="muted">
             This is some placeholder block-level help text for the above input.
             It's a bit lighter and easily wraps to a new line.
-          </FormText>
+          </FormText>   <br />    <br /> 
+        <center>  <Button>AJOUTER </Button></center>
         </FormGroup>
         </Form> </Col>     <br />      <br />
 
@@ -129,33 +119,12 @@ export default class Contact extends React.Component {
         </FormGroup>      <br />
         <FormGroup>
           <Label >Nombre d'écoutes</Label>
-          <Input type="select" name="select">
-            <option>10</option>
-            <option>20</option>
-            <option>30</option>
-            <option>40</option>
-            <option>50</option>
-            <option>100</option>
-            <option>500</option>
-            <option>1000</option>
-            <option>5000</option>
-            <option>100k</option>
-          </Input>
+          <Input type="name"  placeholder="Nombre d'écoutes" />
         </FormGroup> 
-        <FormGroup>
+        <FormGroup> <br />
           <Label >Likes </Label>
-          <Input type="select" name="select">
-            <option>10</option>
-            <option>20</option>
-            <option>30</option>
-            <option>40</option>
-            <option>50</option>
-            <option>100</option>
-            <option>500</option>
-            <option>1000</option>
-            <option>5000</option>
-            <option>100k</option>
-          </Input>
+          <Input type="name"  placeholder="Likes" /><br />    <br />    
+         <center><Button>AJOUTER </Button></center> 
         </FormGroup> 
         </Form>    </Col>     <br />      <br />
         
@@ -163,8 +132,7 @@ export default class Contact extends React.Component {
 
         </Row></Container>
         <br />    <br />    <br />    <br />    <br />
-      <center>  <Button>AJOUTER </Button></center>
-       
+      
       <br />    <br />    <br />    <br />    <br />
       <br />
       
