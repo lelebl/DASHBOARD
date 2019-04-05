@@ -3,6 +3,9 @@ import axios from 'axios';
 import { Button, Form, FormGroup, Label, Input, FormText } from 'reactstrap';
 import { Container, Row, Col } from 'reactstrap';
 import './contact.css'
+import ArtistsList from './ArtistsList';
+import TracksList from './TracksList';
+import AlbumsList from './AlbumsList';
 
 export default class Contact extends React.Component {
 
@@ -174,8 +177,7 @@ export default class Contact extends React.Component {
           <Label >Image de couverture </Label>
           <Input type="file" name="cover_picture_url" onChange={this.handleChange6}/>
           <FormText color="muted">
-            This is some placeholder block-level help text for the above input.
-            It's a bit lighter and easily wraps to a new line.
+            Image de couverture de l'album à importer
           </FormText>   <br />    <br /> 
         <center>  <Button>AJOUTER </Button></center>
         </FormGroup>
@@ -198,11 +200,18 @@ export default class Contact extends React.Component {
         <FormGroup> <br />
           <Label >Likes </Label>
           <Input type="texte"  placeholder="Likes" name = "likes" onChange={this.handleChange10} /><br />    <br />    
-         <center><Button>AJOUTER </Button></center> 
+         <center><Button>AJOUTER </Button></center>   <br /> <br />      <br />     <br /> 
         </FormGroup> 
-        </Form>    </Col>     <br />      <br />
+        </Form>    </Col>     <br />      <br /> <br />      <br />     <br /> 
         
-        
+     <center> <h1>Liste de tous les artistes </h1></center>  
+     <ArtistsList/>
+
+     <center> <h1>Liste de tous les albums </h1></center>  
+     <AlbumsList/>
+
+     <center> <h1>Liste de tous les morceaux </h1></center>  
+     <TracksList/>
 
         </Row></Container>
         <br />    <br />    <br />    <br />    <br />
