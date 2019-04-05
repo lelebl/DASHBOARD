@@ -47,8 +47,8 @@ exports.findAll = (req, res) => {
         message: err.message || 'Some error occurred while retrieving albumss.'
       });
     });
-};
-
+}; */
+/*
 // Find a single albums with a albumsId
 exports.findOne = (req, res) => {
   albums.findById(req.params.albumsId)
@@ -71,7 +71,7 @@ exports.findOne = (req, res) => {
       });
     });
 };
-
+/*
 // Delete a albums with the specified albumsId in the request
 exports.delete = (req, res) => {
   albums.findByIdAndRemove(req.params.albumsId)

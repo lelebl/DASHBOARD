@@ -72,28 +72,4 @@ exports.findOne = (req, res) => {
       });
     });
 };
-
-
-// Delete a tracks with the specified tracksId in the request
-exports.delete = (req, res) => {
-  tracks.findByIdAndRemove(req.params.tracksId)
-    .then(tracks => {
-      if (!tracks) {
-        return res.status(404).send({
-          message: 'tracks not found with id ' + req.params.tracksId
-        });
-      }
-      res.send({ message: 'tracks deleted successfully!' });
-    })
-    .catch(err => {
-      if (err.kind === 'ObjectId' || err.name === 'NotFound') {
-        return res.status(404).send({
-          message: 'tracks not found with id ' + req.params.tracksId
-        });
-      }
-      return res.status(500).send({
-        message: 'Could not delete tracks with id ' + req.params.tracksId
-      });
-    });
-};
 */

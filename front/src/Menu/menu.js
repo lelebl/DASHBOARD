@@ -6,12 +6,11 @@ import Widget from './Widgets/widget';
 import Widget2 from './Widgets2/widget2';
 import Widget3 from './Widgets3/widget3'; 
 import Widget4 from './Widgets4/widget4'; 
+import axios from 'axios'; 
 
-
-const line = {
+var line = {
   titre: "10", 
   comment: "albums cette semaine",
-  
   }
 
 const line1 = {
@@ -50,8 +49,25 @@ const line3 = {
 
 
  class Menu extends React.Component {
+
+state = {
+ artists1: []
+}
+
+componentDidMount(){
+  axios.get('http://localhost:3001/artists/1234')
+  .then(res =>{
+    console.log(res); 
+    this.setState({artists1: res.data})
+  })
+}
+
+
+
   render() {
-    return (        
+    return (   
+    
+
     <div className="App">
       <Container>
           <br />
