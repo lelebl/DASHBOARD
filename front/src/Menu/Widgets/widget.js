@@ -12,6 +12,7 @@ class Widget extends Component{
         const { titre, comment } = this.props.data ; 
         return(
             <div className="cont">
+
             <Titre titre={titre}/>
             <Comment comment={comment}/>
           </div>

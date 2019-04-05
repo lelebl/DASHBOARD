@@ -35,10 +35,10 @@ exports.create = (req, res) => {
       });
     });
 };
-/*
+
 // Retrieve and return all albumss from the database.
 exports.findAll = (req, res) => {
-  albums.find()
+  Albums.find()
     .then(albums => {
       res.send(albums);
     })
@@ -47,7 +47,51 @@ exports.findAll = (req, res) => {
         message: err.message || 'Some error occurred while retrieving albumss.'
       });
     });
-}; */
+};
+
+exports.diff = (req,res)=>{
+  var genre = "Rap";
+  var diff = 0;
+  Albums.find()
+  .then(albums =>{
+  albums.forEach(element => {
+    if(element.genre == genre){
+    diff++;}
+
+  });
+  })
+  .then(function(){
+    res.json({diff: diff, genre: genre});
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: err.message || 'Some error occurred while recent.'
+    });
+  });
+  
+  
+  };
+  exports.nbrAlbum = (req,res)=>{
+
+    var nbr = 0;
+    Albums.find()
+    .then(albums =>{
+    albums.forEach(element => {
+      nbr++;
+    });
+    })
+    .then(function(){
+      res.json({nbr:nbr});
+    })
+    .catch(err => {
+      res.status(500).send({
+        message: err.message || 'Some error occurred while recent.'
+      });
+    });
+    
+    
+    };
+
 /*
 // Find a single albums with a albumsId
 exports.findOne = (req, res) => {
@@ -71,7 +115,7 @@ exports.findOne = (req, res) => {
       });
     });
 };
-/*
+
 // Delete a albums with the specified albumsId in the request
 exports.delete = (req, res) => {
   albums.findByIdAndRemove(req.params.albumsId)

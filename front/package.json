@@ -5,6 +5,7 @@
   "dependencies": {
     "bootstrap": "^4.3.1",
     "fusioncharts": "^3.13.4",
+    "random-color": "^1.0.1",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-fusioncharts": "^3.0.0",

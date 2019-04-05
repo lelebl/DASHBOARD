@@ -63,7 +63,7 @@ export default class Contact extends React.Component {
     this.setState({ cover_picture_url: event.target.value });
   }
 
-  handleSubmit = event => {
+  handleSubmit1 = event => {
     event.preventDefault();
     
     var albums = {
@@ -97,7 +97,7 @@ export default class Contact extends React.Component {
     this.setState({ likes: event.target.value });
   }
 
-  handleSubmit = event => {
+  handleSubmit2 = event => {
     event.preventDefault();
     
     var tracks = {
@@ -151,7 +151,7 @@ export default class Contact extends React.Component {
         </Col>     <br />      <br />
 
 
-        <Col><Form onSubmit={this.handleSubmit}>  <br />    <br /> <br /> 
+        <Col><Form onSubmit={this.handleSubmit1}>  <br />    <br /> <br /> 
         <h2 >Album</h2>
         <br />   
       <FormGroup>
@@ -164,7 +164,11 @@ export default class Contact extends React.Component {
         </FormGroup>      <br />
         <FormGroup>
           <Label>Genre</Label>
-          <Input type="texte"  placeholder="Genre" name = "genre" onChange={this.handleChange5} />
+          <Input type="select" name="genre" id="exampleSelect" onChange={this.handleChange5}>
+            <option>Rap</option>
+            <option>Rock</option>
+            <option>Hip-Hop</option>
+          </Input>
         </FormGroup>      <br />
         <FormGroup>
           <Label >Image de couverture </Label>
@@ -178,7 +182,7 @@ export default class Contact extends React.Component {
         </Form> </Col>     <br />      <br />
 
         <Col><br />    <br /> <br /> 
-        <h2 >Titre</h2>  <br />   <Form onSubmit={this.handleSubmit}>  
+        <h2 >Titre</h2>  <br />   <Form onSubmit={this.handleSubmit2}>  
       <FormGroup>
           <Label>Nom</Label>
           <Input type="texte"  placeholder="Nom" name="nom" onChange={this.handleChange7} />

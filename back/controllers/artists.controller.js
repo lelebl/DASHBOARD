@@ -35,24 +35,7 @@ exports.create = (req, res) => {
     });
 };
 
-
-/*exports.findBest = (req, res) => {
-
-  const artists1 = new Artists({
-    nom: req.body.nom,
-    birth: req.body.birth, 
-    followers: 0 || ''
-
-  });
-
-  artists.find()
-  .then(artists => {
-    artists.forEach();
-}
-
-}*/
-
-// Retrieve and return all artists from the database.
+// Retrieve and return all artistss from the database.
 exports.findAll = (req, res) => {
   Artists.find()
     .then(artists => {
@@ -63,40 +46,80 @@ exports.findAll = (req, res) => {
         message: err.message || 'Some error occurred while retrieving artistss.'
       });
     });
-}; 
+};
 
+
+/// recuperer l'artiste avec le plus de followers
+exports.bestfollower = (req,res)=>{
+  var bestArtist = new Artists({
+    nom: "",
+    birth: "", 
+    followers: 0
+
+  });;
+  Artists.find()
+  .then(artists =>{
+  artists.forEach(element => {
+    if(element.followers >= bestArtist.followers){
+    bestArtist=element;}
+  });
+  })
+  .then(function(){
+    res.json({artist:bestArtist});
+  })
+  .catch(err => {
+    res.status(500).send({
+      message: err.message || 'Some error occurred while followers.'
+    });
+  });
+  
+  
+  };
+  
+
+/*
 // Find a single artists with a artistsId
 exports.findOne = (req, res) => {
-  Artists.findById(req.params._id)
+  artists.findById(req.params.artistsId)
     .then(artists => {
       if (!artists) {
         return res.status(404).send({
-          message: 'artists not found with id ' + req.params._id
+          message: 'artists not found with id ' + req.params.artistsId
         });
       }
       res.send(artists);
     })
     .catch(err => {
-      if (err.kind === '_id') {
+      if (err.kind === 'ObjectId') {
         return res.status(404).send({
-          message: 'artists not found with id ' + req.params._id
+          message: 'artists not found with id ' + req.params.artistsId
         });
       }
       return res.status(500).send({
-        message: 'Error retrieving artists with id ' + req.params._id
+        message: 'Error retrieving artists with id ' + req.params.artistsId
       });
     });
-}; 
-/*
+};
 
-exports.findOne = (req, res) =>{
-  Artists.where("followers").gt(12345).then(artists=>{
-    res.send(artists);
-  })
-  .catch(err => {
-    res.status(500).send({
-      message: err.message || 'Some error occurred while retrieving artistss.'
+// Delete a artists with the specified artistsId in the request
+exports.delete = (req, res) => {
+  artists.findByIdAndRemove(req.params.artistsId)
+    .then(artists => {
+      if (!artists) {
+        return res.status(404).send({
+          message: 'artists not found with id ' + req.params.artistsId
+        });
+      }
+      res.send({ message: 'artists deleted successfully!' });
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+        return res.status(404).send({
+          message: 'artists not found with id ' + req.params.artistsId
+        });
+      }
+      return res.status(500).send({
+        message: 'Could not delete artists with id ' + req.params.artistsId
+      });
     });
-})
-}
-*/
+};*/

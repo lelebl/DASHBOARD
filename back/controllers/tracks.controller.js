@@ -36,10 +36,10 @@ exports.create = (req, res) => {
     });
 };
 
-/*
+
 // Retrieve and return all trackss from the database.
 exports.findAll = (req, res) => {
-  tracks.find()
+  Tracks.find()
     .then(tracks => {
       res.send(tracks);
     })
@@ -50,6 +50,28 @@ exports.findAll = (req, res) => {
     });
 };
 
+exports.sommetracks = (req,res)=>{
+var somme = 0;
+Tracks.find()
+.then(tracks =>{
+tracks.forEach(element => {
+  somme+=element.durée;
+});
+})
+.then(function(){
+  res.json({somme:somme});
+})
+.catch(err => {
+  res.status(500).send({
+    message: err.message || 'Some error occurred while somme tracks.'
+  });
+});
+
+
+};
+
+
+/*
 // Find a single tracks with a tracksId
 exports.findOne = (req, res) => {
   tracks.findById(req.params.tracksId)
@@ -69,6 +91,30 @@ exports.findOne = (req, res) => {
       }
       return res.status(500).send({
         message: 'Error retrieving tracks with id ' + req.params.tracksId
+      });
+    });
+};
+
+
+// Delete a tracks with the specified tracksId in the request
+exports.delete = (req, res) => {
+  tracks.findByIdAndRemove(req.params.tracksId)
+    .then(tracks => {
+      if (!tracks) {
+        return res.status(404).send({
+          message: 'tracks not found with id ' + req.params.tracksId
+        });
+      }
+      res.send({ message: 'tracks deleted successfully!' });
+    })
+    .catch(err => {
+      if (err.kind === 'ObjectId' || err.name === 'NotFound') {
+        return res.status(404).send({
+          message: 'tracks not found with id ' + req.params.tracksId
+        });
+      }
+      return res.status(500).send({
+        message: 'Could not delete tracks with id ' + req.params.tracksId
       });
     });
 };
